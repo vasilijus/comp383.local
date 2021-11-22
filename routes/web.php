@@ -21,4 +21,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/users', function () {
+    return view('users');
+})->middleware(['auth', 'roleChecker:admin, null'])->name('users');
+
 require __DIR__.'/auth.php';
