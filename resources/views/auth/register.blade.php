@@ -26,6 +26,13 @@
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
 
+            <!-- Loaction -->
+            <div>
+                <x-label for="location" :value="__('Location')" />
+
+                <x-input id="location" class="block mt-1 w-full" type="text" name="location" :value="old('location')" required autofocus />
+            </div>
+
             <!-- Password -->
             <div class="mt-4">
                 <x-label for="password" :value="__('Password')" />
