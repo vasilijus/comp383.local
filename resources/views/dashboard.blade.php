@@ -47,14 +47,18 @@
     }} --}}
 
     <script type="text/javascript">
+    var tmp = '';
         document.addEventListener('DOMContentLoaded', ()=>{
             console.log('v-js')
             const city = document.querySelector('#city')
+            const days = 4
             // debugger
             // const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiKey}&units=metric`;
             const apiURL = 'https://api.openweathermap.org/data/2.5/weather?q='+<?= '"'; ?>{{ $user->location }}<?= '"'; ?>+'&appid='+<?= '"'; ?>{{ env('WEATHER_API') }}<?= '"'; ?>+'&units=metric';
+            // const apiURL = 'https://api.openweathermap.org/data/2.5/forecast/daily?q='
+            // +<?= '"'; ?>{{ $user->location }}<?= '"'; ?>+'&cnt='+days+'&appid='+<?= '"'; ?>{{ env('WEATHER_API') }}<?= '"'; ?>;
 
-            let test = 'asd';
+            // ================================================================
             fetch(apiURL)
                 .then(response => response.json())
                 .then(data => {
@@ -63,6 +67,8 @@
                         weather[0]["icon"]
                     }.svg`;
 //  debugger
+                    tmp = data;
+
                     const div = document.createElement("div");
                     div.classList.add("city");
                     const markup = `
