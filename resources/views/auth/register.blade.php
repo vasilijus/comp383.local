@@ -26,6 +26,13 @@
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
 
+            <!-- Email Address -->
+            <div class="mt-4">
+                <x-label for="dob" :value="__('dob')" />
+
+                <x-input id="dob" class="block mt-1 w-full" type="date" name="dob" :value="old('dob')" required />
+            </div>
+
             <!-- Loaction -->
             <div>
                 <x-label for="location" :value="__('Location')" />

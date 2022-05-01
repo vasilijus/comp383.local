@@ -20,6 +20,7 @@ class AdminUserSeeder extends Seeder
                 'name'      =>'admin',
                 'email'     =>'admin@test.com',
                 'password'  => bcrypt('admin'),
+                'dob'       => date('Y-m-d'),
                 'role'      => 'admin',
                 'location'  => 'London',
             ]

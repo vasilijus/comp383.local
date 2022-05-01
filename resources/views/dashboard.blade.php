@@ -41,10 +41,11 @@
         </div>
     </div>
 
-    {{-- {{        $cookie_name = $user->name;
+    @php
+        $cookie_name = $user->name;
         $cookie_value = $user->location;
         setcookie($cookie_name, $cookie_value, time() + 60000, '/dashboard');
-    }} --}}
+    @endphp
 
     <script type="text/javascript">
     var tmp = '';
@@ -66,11 +67,10 @@
                     const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${
                         weather[0]["icon"]
                     }.svg`;
-//  debugger
-                    tmp = data;
 
                     const div = document.createElement("div");
-                    div.classList.add("city");
+                          div.classList.add("city");
+
                     const markup = `
                         <h2 class="city-name">
                             <span>${name}</span>
@@ -85,10 +85,12 @@
                             <figcaption>${weather[0]["description"]}</figcaption>
                         </figure>
                     `;
+
                     div.innerHTML = markup;
                     city.appendChild(div);
 
-                }).catch(() => { console.log('error in finding city')})
-        })
+                })
+                .catch(() => { console.log('error in finding city')})
+        });
     </script>
 </x-app-layout>

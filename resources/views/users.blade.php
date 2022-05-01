@@ -35,10 +35,14 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table id="users">
 
+@php 
+echo("<script>console.log('inline')</script>");
+@endphp
                         <tr>
                             <th>ID</th>
                             <th>User</th>
                             <th>Email</th>
+                            <th>DOB</th>
                             <th>Created</th>
                         </tr>
                         @foreach ($users as $user)
@@ -46,6 +50,7 @@
                             <td>{{ $user->id }}</td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
+                            <td>{{ $user->dob }}</td>
                             <td>{{ $user->created_at }}</td>
                         </tr>
                         @endforeach
