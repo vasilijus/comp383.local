@@ -28,7 +28,9 @@ Route::get('/users', function () {
     return view('users')->with('users', User::all());
 })->middleware(['auth', 'roleChecker:admin, null'])->name('users');
 
-Route::get('/news', [BbsController::class, 'index']);
-Route::get('/news/{bb}', [BbsController::class, 'detail']);
+Route::prefix('/news')->group(function () {
+    Route::get('/', ['as' => 'news.index', BbsController::class, 'index']);
+    Route::get('/{bb}', ['as' => 'news.item', BbsController::class, 'detail']);
+});
 
 require __DIR__.'/auth.php';

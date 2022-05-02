@@ -24,7 +24,8 @@ class BbsController extends Controller
     public function index() {
         $bbs = [
             'bbs' => Bb::latest()->get(),
-            'currency' => env("CURRENCY")
+            'currency' => env("CURRENCY"),
+            'reqa'=>''
         ];
 
         return view('bbs/index', $bbs);
