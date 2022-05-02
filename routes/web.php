@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BbsController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -27,4 +28,5 @@ Route::get('/users', function () {
     return view('users')->with('users', User::all());
 })->middleware(['auth', 'roleChecker:admin, null'])->name('users');
 
+Route::get('/news', [BbsController::class, 'index']);
 require __DIR__.'/auth.php';
