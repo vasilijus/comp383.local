@@ -29,4 +29,6 @@ Route::get('/users', function () {
 })->middleware(['auth', 'roleChecker:admin, null'])->name('users');
 
 Route::get('/news', [BbsController::class, 'index']);
+Route::get('/news/{id}', [BbsController::class, 'detail']);
+
 require __DIR__.'/auth.php';
