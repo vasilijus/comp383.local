@@ -31,6 +31,8 @@ Route::get('/users', function () {
 Route::prefix('/news')->group(function () {
     Route::get('/', ['as' => 'news.index', BbsController::class, 'index']);
     Route::get('/{bb}', ['as' => 'news.item', BbsController::class, 'detail']);
+    Route::get('/listings', ['as' => 'news.listings', BbsController::class, 'index']);
+    Route::get('/listing/{bb}', ['as' => 'news.listing', BbsController::class, 'listing']);
 });
 
 require __DIR__.'/auth.php';

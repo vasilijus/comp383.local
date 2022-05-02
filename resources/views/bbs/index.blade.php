@@ -12,11 +12,12 @@
                     <th>Toвap</th>
                     <th>Цена, {{ $currency }}.</th>
                     <th>&nbsp;</th>
+                    <th>&nbsp;</th>
                 </tr>
             </thead>
             <tbody>
             @php
-                dump($reqa)
+                dump('')
                 @endphp
                 @foreach($bbs as $bb)
                 <tr>
@@ -24,7 +25,7 @@
                         <h3>{{ $bb->title }}</h3>
                     </td>
                     <td>{{ $bb->price }}</td>
-                    <td><a href="/news/{{ $bb->id }}" >Подробнее ...</a></td>
+                    <td><a href="/news/{{ $bb->id }}" >Подробнее s...</a></td>
                 </tr>
                 @endforeach
             </tbody>

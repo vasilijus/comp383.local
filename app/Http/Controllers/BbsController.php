@@ -33,11 +33,22 @@ class BbsController extends Controller
 
 
     public function detail(Bb $bb) {
-        // $bb = Bb::find($id);
-        // $s = $id->title ."\r\n"
-        // . '  ' . $id->content."\r\n"
-        // . ' - ' . $id->price."\r\n";
-        return view('bbs/detail', [ 'bb' => $bb] );
+        $user = $bb->user()->first();
+        $userName = $bb->user()->first()->name;
+        return view('bbs/detail', [ 
+            'bb' => $bb, 
+            'user' => $user,
+            'username' => $userName] );
         // return response($s)->header('Content-Type', 'text/plain');
     } 
+
+    
+    public function listings(Bb $bb) {
+        die('test');
+        return 'test';
+        foreach(Bb::all() as $bb ) {
+            $user = $bb->user;
+            echo $user->name, ' > ', $bb->title . ' - ' . $bb->price . '\r\n';
+        }
+    }
 }

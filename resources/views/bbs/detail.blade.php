@@ -15,6 +15,7 @@
                 
                 <p>{{ $bb->content }}</p>
                 <p>{{ $bb->price }}</p>
+                <p>Email {{ $user }} : <a href="mailto:{{ $user->email }}">Get in touch</a></p>
                 <p><a href="/news">Back to listings</a></p>
             </tr>
         </div>
