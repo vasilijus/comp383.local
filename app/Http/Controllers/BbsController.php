@@ -31,11 +31,12 @@ class BbsController extends Controller
     }
 
 
-    public function detail(Bb $id) {
+    public function detail(Bb $bb) {
         // $bb = Bb::find($id);
-        $s = $id->title ."\r\n"
-        . '  ' . $id->content."\r\n"
-        . ' - ' . $id->price."\r\n";
-        return response($s)->header('Content-Type', 'text/plain');
+        // $s = $id->title ."\r\n"
+        // . '  ' . $id->content."\r\n"
+        // . ' - ' . $id->price."\r\n";
+        return view('bbs/detail', [ 'bb' => $bb] );
+        // return response($s)->header('Content-Type', 'text/plain');
     } 
 }

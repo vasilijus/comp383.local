@@ -25,7 +25,7 @@
                             <h3>{{ $bb->title }}</h3>
                         </td>
                         <td>{{ $bb->price }}</td>
-                        <td><a href="/{{ $bb->price }}" >Подробнее ...</a></td>
+                        <td><a href="/news/{{ $bb->id }}" >Подробнее ...</a></td>
                     </tr>
                     @endforeach
                 </tbody>
